@@ -1,18 +1,19 @@
 import { Component } from '@angular/core';
-import { Platform, ionicBootstrap } from 'ionic-angular';
+import { Platform, ionicBootstrap , MenuController} from 'ionic-angular';
 import { StatusBar } from 'ionic-native';
-import { TabsPage } from './pages/tabs/tabs';
+import { HomePage } from './pages/home/home';
 
 
 @Component({
-  template: '<ion-nav [root]="rootPage"></ion-nav>'
+  templateUrl: 'build/pages/menu/menu.html'
 })
 export class MyApp {
 
   public rootPage: any;
 
-  constructor(private platform: Platform) {
-    this.rootPage = TabsPage;
+  constructor(private platform: Platform, private menu: MenuController) {
+    this.menu =  menu;
+    this.rootPage = HomePage;
 
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
