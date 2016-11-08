@@ -6,20 +6,20 @@ import { InstagramPage } from '../instagram/instagram';
 import { YoutubePage } from '../youtube/youtube';
 import { SoundcloudPage } from '../soundcloud/soundcloud';
 import { StorePage } from '../store/store';
-
+import { FeedsPage } from '../feeds/feeds';
 
 @Component({
   templateUrl: 'build/pages/home/home.html',
 })
 export class HomePage {
   	// set the root pages for each tab
-	tab1Root = SoundcloudPage;
-	tab2Root = FacebookPage;
-	tab3Root = InstagramPage;
-	tab4Root = TwitterPage;
-	tab5Root = YoutubePage;
-	tab6Root = StorePage;
-
+  	tab1Root = FeedsPage;
+	tab2Root = SoundcloudPage;
+	tab3Root = FacebookPage;
+	tab4Root = InstagramPage;
+	tab5Root = TwitterPage;
+	tab6Root = YoutubePage;
+	tab7Root = StorePage;
 
 	constructor(private navCtrl: NavController) {
 

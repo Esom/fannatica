@@ -54,6 +54,13 @@
     @extend .fa-soundcloud:before;
     content: "\f1b6";
 }
+.ion-ios-fa-rss::before,
+.ion-ios-fa-rss-outline::before,
+.ion-md-fa-rss::before {
+    @extend .fa-icons-general;
+    @extend .fa-rss:before;
+    content: "\f09e";
+}
 ion-tabbar {
     background: #000 !important;
 }
