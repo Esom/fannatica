@@ -8,8 +8,12 @@ import { SoundcloudPage } from '../soundcloud/soundcloud';
 import { StorePage } from '../store/store';
 import { FeedsPage } from '../feeds/feeds';
 
+import {YoutubeService} from '../../providers/youtube-service/youtube-service';
+import 'rxjs/add/operator/map';
+
 @Component({
   templateUrl: 'build/pages/home/home.html',
+  providers:[YoutubeService]
 })
 export class HomePage {
   	// set the root pages for each tab
@@ -21,7 +25,7 @@ export class HomePage {
 	tab6Root = YoutubePage;
 	tab7Root = StorePage;
 
-	constructor(private navCtrl: NavController) {
+	constructor(private nav: NavController, public ytPlayer: YoutubeService) {
 
 	}
 }
