@@ -18,6 +18,42 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
+  <ion-card *ngFor="let item of items">
+  <span *ngIf="item.type == 'image'">
+    <img [src]="item.images.standard_resolution.url"/>
+  </span>
+  <span *ngIf="item.type == 'video'">
+    <video  controls>
+      <source [src]="item.videos.standard_resolution.url" type="video/mp4">
+    </video>
+  </span>
+    <ion-card-content>
+      <p *ngIf="item.caption">{{item.caption.text}}</p>
+      <small *ngIf="item.tags.length > 0">
+        <span *ngFor="let tag of item.tags">
+          #{{tag}}
+        </span>
+      </small>
+      <ion-row no-padding>
+      <ion-col text-center no-padding>
+        <button ion-button color="dark" clear>
+          <ion-icon name="heart"></ion-icon> {{item.likes.count}}
+        </button>
+      </ion-col>
 
+      <ion-col text-center no-padding>
+        <button ion-button color="dark" clear>
+          <ion-icon name="chatboxes"></ion-icon> {{item.comments.count}}
+        </button>
+      </ion-col>
+
+      <ion-col text-center no-padding>
+        <button ion-button color="dark" clear>
+          <ion-icon name="share-alt"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
