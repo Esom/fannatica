@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-
+import { InstagramService } from '../../providers/instagram-service/instagram-service';
 /*
   Generated class for the InstagramPage page.
 
@@ -9,11 +9,22 @@ import { NavController } from 'ionic-angular';
 */
 @Component({
   templateUrl: 'build/pages/instagram/instagram.html',
+  providers: [InstagramService]
 })
 export class InstagramPage {
+  items: any = undefined;
+  constructor(
+    private navCtrl: NavController,
+    private instagram: InstagramService
+  ) {}
 
-  constructor(private navCtrl: NavController) {
-
+  onPageDidEnter() {
+    this.instagram.getMedia()
+      .map(res => res.json())
+      .subscribe((res) => {
+        this.items = res.data;
+        console.log(this.items)
+      })
   }
 
 }
