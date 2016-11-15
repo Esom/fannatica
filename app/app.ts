@@ -3,7 +3,6 @@ import { Platform, ionicBootstrap , MenuController} from 'ionic-angular';
 import { StatusBar } from 'ionic-native';
 import { HomePage } from './pages/home/home';
 import {YoutubePage} from './pages/youtube/youtube';
-import {YoutubeService} from './providers/youtube-service/youtube-service';
 
 
 @Component({
@@ -13,7 +12,7 @@ export class MyApp {
 
   public rootPage: any;
 
-  constructor(private platform: Platform, private menu: MenuController, public ytPlayer: YoutubeService) {
+  constructor(private platform: Platform, private menu: MenuController) {
     this.menu =  menu;
     this.rootPage = HomePage;
 
@@ -30,4 +29,4 @@ export class MyApp {
   }
 }
 
-ionicBootstrap(MyApp, [YoutubeService]);
+ionicBootstrap(MyApp);
