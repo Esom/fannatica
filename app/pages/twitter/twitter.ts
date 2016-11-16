@@ -1,19 +1,23 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { TwitterService } from '../../providers/twitter-service/twitter-service';
 
-/*
-  Generated class for the TwitterPage page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   templateUrl: 'build/pages/twitter/twitter.html',
+  providers:[TwitterService]
+
 })
 export class TwitterPage {
+  items: any = undefined;
+  constructor(private navCtrl: NavController, private twitter: TwitterService) {}
 
-  constructor(private navCtrl: NavController) {
-
+  onPageDidEnter() {
+    this.twitter.getTimeline()
+    .map(res => res.json())
+    .subscribe((res) => {
+      this.items = res.data;
+      console.log(this.items)
+    })
   }
 
 }
