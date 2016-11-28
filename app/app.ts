@@ -1,20 +1,29 @@
-import { Component } from '@angular/core';
-import { Platform, ionicBootstrap , MenuController} from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { Platform, ionicBootstrap , MenuController, NavController, Nav} from 'ionic-angular';
 import { StatusBar } from 'ionic-native';
 import { HomePage } from './pages/home/home';
-import {YoutubePage} from './pages/youtube/youtube';
-
+import { YoutubePage } from './pages/youtube/youtube';
+import { LoginPage } from './pages/login/login';
+import { AccountPage } from './pages/account/account';
+import { ChatPage } from './pages/chat/chat';
 
 @Component({
-  templateUrl: 'build/pages/menu/menu.html'
+  templateUrl: 'build/app.html',
+  // templateUrl: 'build/pages/menu/menu.html',
+  providers: [NavController]
 })
 export class MyApp {
-
-  public rootPage: any;
+  @ViewChild(Nav) nav : Nav;
+  private rootPage: any;
+  private pages:any[] = [];
 
   constructor(private platform: Platform, private menu: MenuController) {
     this.menu =  menu;
-    this.rootPage = HomePage;
+    this.pages = [
+        { title: 'Account', component: AccountPage },
+        { title: 'Login', component: LoginPage }
+    ];
+    this.rootPage = ChatPage;
 
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
@@ -27,6 +36,13 @@ export class MyApp {
       StatusBar.styleDefault();
     });
   }
+
+  openPage(page) {
+    this.menu.close()
+    // Using this.nav.setRoot() causes
+    // Tabs to not show!
+    this.nav.push(page.component);
+  };
 }
 
 ionicBootstrap(MyApp);

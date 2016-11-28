@@ -61,6 +61,13 @@
     @extend .fa-rss:before;
     content: "\f09e";
 }
+.ion-ios-fa-comment-o::before,
+.ion-ios-fa-comment-o-outline::before,
+.ion-md-fa-comment-o::before {
+    @extend .fa-icons-general;
+    @extend .fa-comment-o:before;
+    content: "\f0e5";
+}
 ion-tabbar {
     background: #000 !important;
 }

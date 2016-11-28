@@ -1,0 +1,18 @@
+.account {
+	.account_card{background-color: #8E24AA !important;}
+	.account_card p {color:#fff;}
+	.account_card img{width:50%;}
+	.account_card h2{color: #fff}
+	.toolbar-background {border-color: none;background: #8E24AA !important;}
+}
+
+.account-footer{
+	ion-col.logout {
+        background-color: #E91E63;
+    }
+    button.buyNowText{color:white;}
+    ion-col.shareApp {
+        background-color: #8e24aa;
+    }
+    button.addToCartText{color:white}
+}
