@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-navbar account no-lines>
+  	<ion-buttons left>
+      <button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Chat</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content account class="chat">
+
+	<ion-grid>
+	  <ion-row>
+	    <ion-col width-10>
+	    	<ion-avatar item-left>
+		      <img src="img/marty-avatar.png">
+		    </ion-avatar>
+	    </ion-col>
+	    <ion-col width-80><p class="bubble">This is now a speech bubble!</p></ion-col>
+	  </ion-row>
+	</ion-grid>
+
+	<ion-grid>
+	  <ion-row>
+	    <ion-col width-80><p class="right_bubble">This is now a speech bubble!</p></ion-col>
+	    <ion-col width-10>
+	    	<ion-avatar item-right>
+		      <img src="img/sarah-avatar.png">
+		    </ion-avatar>
+	    </ion-col>
+	  </ion-row>
+	</ion-grid>
+</ion-content>
+<ion-footer class="account-footer">
+    <ion-grid>
+        <ion-row>
+            <ion-col width-80>
+                <ion-item>
+				   <ion-textarea placeholder="Send a message..." no-border></ion-textarea>
+				</ion-item>
+            </ion-col>
+            <ion-col width-20>
+            	<button ion-button color="dark" clear icon-only>
+				  <ion-icon ios="ios-paper-plane" md="md-paper-plane"></ion-icon>
+				</button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+</ion-footer>

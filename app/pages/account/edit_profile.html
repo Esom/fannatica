@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-navbar account>
+    <ion-buttons left>
+      <button (click)="dismiss()">
+        <!-- <span primary >Cancel</span> -->
+        <ion-icon ios="ios-arrow-round-back" md="md-arrow-round-back"></ion-icon>
+        <!-- <ion-icon name="close"></ion-icon> -->
+      </button>
+    </ion-buttons>
+
+    <ion-title>
+      Edit Profile
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+	<ion-list>
+	  <ion-item>
+	    <ion-label><ion-icon ios="ios-person" md="md-person"></ion-icon> Full Name</ion-label>
+	    <ion-input type="text"></ion-input>
+	  </ion-item>
+	  <ion-item>
+	    <ion-label><ion-icon ios="ios-mail" md="md-mail"></ion-icon> Email</ion-label>
+	    <ion-input type="text"></ion-input>
+	  </ion-item>
+	  <ion-item>
+	    <ion-label> <ion-icon ios="ios-lock" md="md-lock"></ion-icon> Password</ion-label>
+	    <ion-input type="password"></ion-input>
+	  </ion-item>
+	  <ion-item>
+	    <ion-label> <ion-icon ios="ios-lock" md="md-lock"></ion-icon> Confirm password</ion-label>
+	    <ion-input type="password"></ion-input>
+	  </ion-item>
+	</ion-list>
+	<ion-list radio-group>
+	  <ion-list-header>
+	    Sex
+	  </ion-list-header>
+
+	  <ion-item>
+	    <ion-label>Male</ion-label>
+	    <ion-radio checked="true" value="male"></ion-radio>
+	  </ion-item>
+
+	  <ion-item>
+	    <ion-label>Female</ion-label>
+	    <ion-radio value="female"></ion-radio>
+	  </ion-item>
+	</ion-list>
+
+	<div padding>
+	  <button block>Update profile</button>
+	</div>
+</ion-content>

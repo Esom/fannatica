@@ -12,7 +12,7 @@ export class TwitterService {
   constructor(private http: Http) {}
 
   getTimeline() {
-    return this.http.get('http://api.twitter.com/1.1/statuses/user_timeline.json?count=10', {
+    return this.http.get('https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=somkyd&count=10', {
       headers: this.header
     });
 

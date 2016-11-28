@@ -1,0 +1,84 @@
+<ion-header>
+  <ion-navbar account no-lines>
+  	<ion-buttons left>
+      <button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Account</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="account">
+	<ion-item class="account_card">
+		<ion-grid>
+			<ion-row>
+				<ion-col width-33></ion-col>
+				<ion-col width-50>
+					<img src="img/avatar.png"/>
+				</ion-col>
+				<ion-col width-33></ion-col>
+			</ion-row>
+			<ion-row>
+				<ion-col width-33>
+					<h2>Ekeh Esom</h2>
+					<p>Fun Loving hard working guy</p>
+				</ion-col>
+				<ion-col width-33></ion-col>
+				<ion-col width-25>
+					<button (click)="editProfile()" ion-button color="dark" round>Edit Profile</button><br/>
+					<p><ion-icon ios="ios-pin" md="md-pin"></ion-icon> Lagos,Nigeria</p>
+				</ion-col>
+			</ion-row>
+		</ion-grid>
+	</ion-item>
+
+	<ion-list>
+	  <ion-list-header>
+	    <ion-icon ios="ios-person" md="md-person"></ion-icon> Account
+	  </ion-list-header>
+	  <ion-item>
+		<ion-grid>
+			<ion-row>
+				<ion-col width-50>Free</ion-col>
+				<ion-col width-20></ion-col>
+				<ion-col width-25><button ion-button color="dark" round>Upgrade <ion-icon ios="ios-lock" md="md-lock"></ion-icon></button></ion-col>
+			</ion-row>
+		</ion-grid>
+	  </ion-item>
+	</ion-list>
+
+	<ion-list >
+		<ion-list-header>
+			<ion-icon ios="ios-notifications" md="md-notifications"></ion-icon> Notifications
+		</ion-list-header>
+		<div *ngIf="dataObject">
+		  <ion-item>
+			<ion-label>Email Notifications</ion-label>
+			<ion-toggle [(ngModel)]="dataObject.email"></ion-toggle>
+		  </ion-item>
+		  <ion-item>
+			<ion-label>Push Notifications</ion-label>
+			<ion-toggle [(ngModel)]="dataObject.push"></ion-toggle>
+		  </ion-item>
+		</div>
+		<ion-item>
+			<ion-icon ios="ios-chatbubbles" md="md-chatbubbles" item-left></ion-icon>Feedback
+		</ion-item>
+	</ion-list>
+</ion-content>
+<ion-footer class="account-footer">
+    <ion-grid>
+        <ion-row>
+            <ion-col class="shareApp" width-100>
+                <button ion-button block clear class="addToCartText" (click)="Share()">
+				<ion-icon ios="ios-share" md="md-share" class="share"></ion-icon>
+                Share</button>
+            </ion-col>
+            <ion-col class="logout" width-100>
+                <button ion-button block clear class="buyNowText">
+                <ion-icon ios="ios-power" md="md-power"></ion-icon>Log out</button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-footer>
